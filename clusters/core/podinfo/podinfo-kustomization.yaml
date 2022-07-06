@@ -11,6 +11,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: podinfo
+    namespace: flux-system
   targetNamespace: default
   patches:
     - patch: |-
