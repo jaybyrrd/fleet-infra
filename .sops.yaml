@@ -1,0 +1,9 @@
+creation_rules:
+  - path_regex: ansible/.*\.sops\.ya?ml
+    unencrypted_regex: "^(kind)$"
+    age: >-
+      age1jnekggy4aeeqfqrwjrze8ye63xl9mkn93gt8yfv8exgk4p2uv4uscv28nr
+  - path_regex: cluster/.*\.ya?ml
+    encrypted_regex: '((?i)(displayname|email|pass|secret($|[^N])|key|token|^data$|^stringData))'
+    age: >-
+      age1jnekggy4aeeqfqrwjrze8ye63xl9mkn93gt8yfv8exgk4p2uv4uscv28nr
