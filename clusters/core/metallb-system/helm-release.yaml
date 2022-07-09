@@ -30,7 +30,7 @@ spec:
           addresses:
             - 192.168.2.128-192.168.2.159
     prometheusRule:
-      enabled: true
+      enabled: false # to change back to true
     controller:
       metrics:
         enabled: true
