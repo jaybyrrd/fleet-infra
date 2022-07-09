@@ -5,7 +5,7 @@ metadata:
   name: kubernetes-dashboard-lb
   namespace: kubernetes-dashboard
   annotations:
-    metallb.universe.tf/loadBalancerIPs: 192.168.2.128
+    metallb.universe.tf/loadBalancerIPs: 192.168.2.129
 spec:
   type: LoadBalancer
   ports:
