@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - flux-system/gotk-components.yaml
   - charts.yaml
+  - core.yaml
