@@ -4,10 +4,3 @@ kind: HelmRelease
 metadata:
   name: podinfo
   namespace: podinfo
-spec:
-  interval: 5m0s
-  sourceRef:
-    kind: GitRepository
-    name: podinfo
-    namespace: flux-system
-  targetNamespace: podinfo
