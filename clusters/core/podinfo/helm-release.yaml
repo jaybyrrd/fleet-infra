@@ -12,15 +12,15 @@ spec:
     kind: GitRepository
     name: podinfo
     namespace: flux-system
-  targetNamespace: default
-  patches:
-    - patch: |-
-        apiVersion: autoscaling/v2beta2
-        kind: HorizontalPodAutoscaler
-        metadata:
-          name: podinfo
-        spec:
-          minReplicas: 3
-      target:
-        name: podinfo
-        kind: HorizontalPodAutoscaler
+  targetNamespace: podinfo
+  # patches:
+  #   - patch: |-
+  #       apiVersion: autoscaling/v2beta2
+  #       kind: HorizontalPodAutoscaler
+  #       metadata:
+  #         name: podinfo
+  #       spec:
+  #         minReplicas: 3
+  #     target:
+  #       name: podinfo
+  #       kind: HorizontalPodAutoscaler
