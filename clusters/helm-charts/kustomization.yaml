@@ -4,4 +4,3 @@ kind: Kustomization
 resources:
   - bitnami-charts.yaml
   - fairwinds-charts.yaml
-  - podinfo-source.yaml
