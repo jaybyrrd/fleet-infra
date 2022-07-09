@@ -4,15 +4,3 @@ kind: HelmRelease
 metadata:
   name: podinfo
   namespace: podinfo
-spec:
-  patches:
-    - patch: |-
-        apiVersion: autoscaling/v2beta2
-        kind: HorizontalPodAutoscaler
-        metadata:
-          name: podinfo
-        spec:
-          minReplicas: 3
-      target:
-        name: podinfo
-        kind: HorizontalPodAutoscaler
