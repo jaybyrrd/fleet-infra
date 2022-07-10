@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - bitnami-charts.yaml
   - fairwinds-charts.yaml
+  - prometheus-community-charts.yaml
