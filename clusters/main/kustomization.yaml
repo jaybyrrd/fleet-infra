@@ -6,4 +6,5 @@ resources:
   - charts.yaml
   - core.yaml
   - crds.yaml
-  - apps.yaml
+  # - apps.yaml
+  - config.yaml
