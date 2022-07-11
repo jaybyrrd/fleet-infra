@@ -1,0 +1,65 @@
+[
+  {"op": "remove", "path": "/machine/network"},
+  {"op": "add", "path": "/machine/network", "value":
+    {
+      "hostname": "ZZ_HOSTNAME",
+      "interfaces": [
+        {
+          "interface": "eth0",
+          "dhcp": true,
+          "mtu": 1500,
+          "vip": {
+            "ip": "$ZZ_API_ADDR"
+          }
+        }
+      ],
+      "extraHostEntries": [
+        {
+          "ip": "$ZZ_API_ADDR",
+          "aliases": [
+            "$ZZ_API_HOSTNAME"
+          ]
+        }
+      ]
+    }
+  },
+  {"op": "replace", "path": "/machine/time", "value":
+    {
+      "disabled": false,
+      "servers": [
+        "time.cloudflare.com"
+      ]
+    }
+  },
+  {"op": "add", "path": "/machine/kubelet/extraArgs", "value":
+    {
+      "feature-gates": "GracefulNodeShutdown=true,MixedProtocolLBService=true",
+      "rotate-server-certificates": true
+    }
+  },
+  {"op": "add", "path": "/machine/install", "value":
+    {
+      "extraKernelArgs": [
+        "talos.logging.kernel=udp://$ZZ_LOGGING_ADDR:6001/"
+      ],
+      "disk": "/dev/sda"
+    }
+  },
+  {"op": "add", "path": "/machine/logging", "value":
+    {
+      "destinations": [
+        {
+          "endpoint": "udp://$ZZ_LOGGING_ADDR:6002/",
+          "format": "json_lines"
+        }
+      ]
+    }
+  },
+  {"op": "add", "path": "/cluster/apiServer/extraArgs", "value":
+    {
+      "feature-gates": "GracefulNodeShutdown=true,MixedProtocolLBService=true"
+    }
+  },
+  {"op": "replace", "path": "/cluster/network/podSubnets/0", "value": "10.40.0.0/16"},
+  {"op": "replace", "path": "/cluster/network/serviceSubnets/0", "value": "10.41.0.0/16"}
+]
