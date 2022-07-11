@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./clusters/config/main
+  path: ./cluster/config/main
   prune: true
   validation: client
   sourceRef:

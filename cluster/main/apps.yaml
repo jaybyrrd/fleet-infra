@@ -10,7 +10,7 @@ spec:
     - name: charts
     - name: config
     - name: core
-  path: ./clusters/apps
+  path: ./cluster/apps
   prune: true
   sourceRef:
     kind: GitRepository
